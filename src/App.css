@@ -1,0 +1,137 @@
+.btn {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:before,
+.btn:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.btn:before {
+  bottom: 0;
+  display: block;
+  height: 1px;
+  width: 0%;
+  content: "";
+  background-color: #e52338;
+}
+
+.btn:hover:before,
+.current a:before {
+  opacity: 1;
+  width: 100%;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.box{
+	grid-template-columns:  7% 93%;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.box > div{
+	position: relative;
+	height: 32px;
+}
+
+.box > div h5{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: .3s;
+}
+
+/* linha colorida ao clicar */
+.box:before, .box:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 1px;
+	background-color: #e52338;
+	transition: .4s;
+}
+
+.box:before{
+	right: 50%;
+}
+
+.box:after{
+	left: 50%;
+}
+
+.box.focus:before, .box.focus:after{
+	width: 50%;
+}
+
+/* subir o titulo do form */
+.box.focus > div > h5{
+	top: -5px;
+	font-size: 15px;
+}
+
+.box.focus > .icon > i{
+	color: #e52338;
+}
+
+.input-box{
+	border: none;
+	outline: none;
+	background: none;
+	color: #555;
+}
+
+.txt_field label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	font-size: 16px;
+	pointer-events: none;
+	transition: .5s;
+  }
+.txt_field span::before{
+	content: '';
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background: #e52338;
+	transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+	top: -5px;
+	color: #e52338;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+	width: 100%;
+}
+
+.pass{
+	margin: -5px 0 50px 5px;
+	color: #a6a6a6;
+	cursor: pointer;
+}
+.pass:hover{
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
